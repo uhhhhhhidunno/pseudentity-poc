@@ -2,6 +2,9 @@
 
 **Deterministic Identity for Development.**
 
+> [!CAUTION]
+> **Early PoC Implementation** - This is an early proof-of-concept. APIs, architecture, and features can change significantly without prior notice. Not recommended for production use.
+
 **Pseudentity** is the official visual companion and stateless Identity Provider for the [pseudata](https://github.com/pseudata/pseudata) ecosystem. It transforms the mathematical determinism of `pseudata` into a fully functioning, standards-compliant mock identity platform.
 
 **[Live Demo: pseudentity.dev](https://pseudentity.dev)**
