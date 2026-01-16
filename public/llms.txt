@@ -89,7 +89,7 @@ Pseudentity is organized into four namespaces:
 Pseudentity is built on [pseudata](https://pseudata.dev), the deterministic mock data generator that produces identical data across Go, Java, Python, and TypeScript using the PCG32 algorithm.
 
 Key concepts from pseudata:
-- **Virtual Arrays**: O(1) infinite scale data access
+- **PseudoArrays**: O(1) infinite scale data access
 - **Cross-Language Consistency**: Same seed = same data everywhere
 - **Multi-Locale Support**: 15+ locales with culturally appropriate names
 - **PCG32 Algorithm**: Statistically superior RNG with proper stream independence

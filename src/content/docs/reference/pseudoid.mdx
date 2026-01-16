@@ -52,7 +52,7 @@ PseudoID is used by both [pseudata](https://pseudata.dev) (the data generation l
 
 ### 1. World Seed
 
-The **world seed** is the base seed you provide when creating a virtual array. It defines the entire "world" or "universe" of generated data.
+The **world seed** is the base seed you provide when creating a PseudoArray. It defines the entire "world" or "universe" of generated data.
 
 ```typescript
 // TypeScript
@@ -108,7 +108,7 @@ This means you can identify an object's type just by looking at its PseudoID.
 
 ### 3. Index
 
-The **index** is the position of the object in its virtual array. It represents the "creation order" within that type.
+The **index** is the position of the object in its PseudoArray. It represents the "creation order" within that type.
 
 ```java
 // Java
@@ -239,7 +239,7 @@ pseudoID := user.ID()
 fmt.Println(pseudoID)  // "00000000-0000-8002-a806-5000000003e8"
 ```
 
-### Creating PseudoIDs Without Virtual Arrays
+### Creating PseudoIDs Without PseudoArrays
 
 You can generate PseudoIDs directly using utility functions:
 
@@ -553,7 +553,7 @@ public boolean isValidProductionUser(String userId) {
 | **Cross-language** | ❌ Random everywhere | ✅ Identical everywhere |
 | **Sortable** | ❌ Random order | ✅ World → Type → Index |
 | **Decodable** | ❌ No metadata | ✅ Extract components |
-| **Use with virtual arrays** | ❌ Not tied to data | ✅ Directly from objects |
+| **Use with PseudoArrays** | ❌ Not tied to data | ✅ Directly from objects |
 | **RFC compliant** | ✅ Yes (RFC 4122) | ✅ Yes (RFC 9562) |
 | **Best for** | Unique identifiers | Traceable, reproducible IDs |
 
